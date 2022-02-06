@@ -1,0 +1,29 @@
+EC2 creation
+_______________________
+provider "aws" {
+  region = "ap-south-1"
+}
+resource "aws_instance" "myweb" {
+  ami           = "ami-06a0b4e3b7eb7a300"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ammulu"
+  }
+}
+
+
+
+VPC Creation
+________________________________
+provider "aws" {
+  region = "ap-south-1"
+}
+resource "aws_vpc" "my_vpc" {
+    cidr-block = "10.0.0.0/16"
+    instance_tenancy = "default"
+    tags = {
+        Nmae = "JavaHomeVpc"
+    }
+}
+  
