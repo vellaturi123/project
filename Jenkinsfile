@@ -16,7 +16,7 @@ pipeline {
       stage('prod'){
         steps{
           echo'U R in Prod'
-          build quietperiod:4, job:job1
+          build quietPeriod:4, job:job1
         }
       }
     }
