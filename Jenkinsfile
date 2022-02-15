@@ -5,7 +5,6 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                build quietPeriod: 3, job: 'job1'
             }
         }
       stage('test'){
@@ -16,7 +15,7 @@ pipeline {
       stage('prod'){
         steps{
           echo'U R in Prod'
-          build quietPeriod:4, job:job1
+          build quietPeriod: 4, job: 'job1'
         }
       }
     }
